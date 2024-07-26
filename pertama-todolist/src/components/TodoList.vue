@@ -33,6 +33,13 @@ const deleteTask = (id: number) => {
   }
 };
 
+const doneTask = (id: number) => {
+  const task = penampungTasks.value.find((task) => task.id === id);
+  if (task) {
+    task.isDone = !task.isDone;
+  }
+};
+
 const tampilin = () => {
   console.log(penampungTasks.value);
 };
@@ -88,7 +95,22 @@ const tampilin = () => {
             >
               Remove
             </button>
-            <button type="submit" class="btn btn-success">Set As Done</button>
+            <button
+              type="button"
+              class="btn btn-success"
+              @click="doneTask(penampungTask.id)"
+              v-if="!penampungTask.isDone"
+            >
+              Set As Done
+            </button>
+            <button
+              type="button"
+              class="btn btn-warning"
+              @click="doneTask(penampungTask.id)"
+              v-else
+            >
+              Set As Undone
+            </button>
           </td>
           <td>
             <h2 v-if="penampungTask.isDone">DONE</h2>

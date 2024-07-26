@@ -67,11 +67,11 @@ const randomizeQuotes = () => {
 
 
   <!-- Ngecek randomnya berhasil apa ngga -->
-   <!-- <ul>
+    <ul>
       <li v-for="(quote, index) in quotesStorages" :key="index">
         {{ quote.text }} {{ quote.by }}
       </li>
-    </ul> -->
+    </ul> 
 
 
 </template>

@@ -13,12 +13,12 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/surah',
+      path: '/surah/:id?',
       name: 'surah',
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component:  SurahView
+      component: SurahView
     },
     {
       path: '/juz',
@@ -26,7 +26,7 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component:  JuzView
+      component: JuzView
     },
     {
       path: '/tafsir',
@@ -34,7 +34,7 @@ const router = createRouter({
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component:  TafsirView
+      component: TafsirView
     },
   ]
 })

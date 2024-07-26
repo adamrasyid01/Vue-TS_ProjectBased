@@ -9,18 +9,28 @@ export const useSuratStore = defineStore('suratStore', {
         error:null
     }),
     actions: {
-        async getSurat() {
+        async getAllSurat(endpoint:string) {
             this.loading = true;
             this.error = null
 
             try {
-                const surat = await axiosInstance.get('')
+                const surat = await axiosInstance.get(endpoint)
                 this.suratList = surat.data.data
                 console.log('Surat List:', this.suratList);
             } catch (error) {   
                 this.error = "Failed"
             } finally {
                 this.loading = false;
+            }
+        },
+        
+        async getSuratbyNomor(nomor:number) {
+            try {
+                const surat = await axiosInstance.get(`/${nomor}`)
+                this.suratList = surat.data.data
+                console.log('Nomorrrrrr:', this.suratList);
+            } catch {
+                
             }
         }
   },
