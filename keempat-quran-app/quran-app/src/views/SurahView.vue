@@ -1,6 +1,6 @@
 <template>
   <div class="p-8 bg-white rounded-lg">
-    <PerAyatSurat/>
+    <DetailSurat/>
   </div>
 </template>
 
@@ -9,6 +9,6 @@
 </style>
 
 <script lang="ts" setup>
-import PerAyatSurat from '@/components/perAyatSurat.vue';
+import DetailSurat from '@/components/DetailSurat.vue';
 
 </script>

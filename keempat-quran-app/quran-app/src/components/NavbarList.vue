@@ -11,7 +11,6 @@ import { ref } from 'vue';
 
 const navItems = ref([
   { name: 'Home', href: '/' },
-  { name: 'Surah', href: '/surah' },
   { name: 'Juz', href: '/juz' },
   { name: 'Tafsir', href: '/tafsir' },
 ]);
