@@ -1,6 +1,6 @@
 import { defineStore } from "pinia"
 
-import { apiBaseGet } from "@/plugins/apiHandler"
+import { apiBaseGetSurat } from "@/plugins/apiHandler"
 
 export const useSuratStore = defineStore({
     id: "surat",
@@ -8,10 +8,10 @@ export const useSuratStore = defineStore({
     }),
     actions: {
         getSurat(payload = {}) {
-            return apiBaseGet("/surat", payload)
+            return apiBaseGetSurat("/surat", payload)
         },
         getSuratById(id: number, payload = {}) {
-            return apiBaseGet(`/surat/${id}`, payload)
+            return apiBaseGetSurat(`/surat/${id}`, payload)
         },
     },
 })

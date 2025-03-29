@@ -1,13 +1,22 @@
-import baseInstance from "./api";
+import { suratInstance, juzInstance } from "./api";
 
-const apiBaseGet = async (url: string, data: object) => {
+const apiBaseGetSurat = async (url: string, data: object) => {
     try {
-      let response = await baseInstance.get(url, data);
+      let response = await suratInstance.get(url, data);
       return response.data.data;
     } catch (error) {
       errorApiHandler(error);
     }
 };
+
+const apiBaseGetJuz = async (url: string, data: object) => {
+    try {
+      let response = await juzInstance(url, data);
+      return response.data.data;
+    } catch (error) {
+      errorApiHandler(error);
+    }
+}
 
 const errorApiHandler = (error: any) => {
     if (error.response) {
@@ -21,4 +30,4 @@ const errorApiHandler = (error: any) => {
     }
 }
 
-export { apiBaseGet};
+export { apiBaseGetSurat, apiBaseGetJuz};

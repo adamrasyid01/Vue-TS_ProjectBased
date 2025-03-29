@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, computed, onMounted } from "vue";
 import { useSuratStore } from "@/stores/suratStore";
-import Pagination from "./Pagination.vue";
+import Pagination from "@/components/Pagination.vue";
 import router from "@/router";
 
 const suratStore = useSuratStore();

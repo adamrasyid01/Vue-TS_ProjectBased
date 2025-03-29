@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import SurahView from '@/views/SurahView.vue'
+import JuzView from '@/views/JuzView.vue'
 
 
 const router = createRouter({
@@ -19,6 +20,11 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
       component: SurahView
     },
+    {
+      path : '/juz/:id?',
+      name : 'juz',
+      component : JuzView
+    }
   ]
 })
 

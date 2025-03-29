@@ -1,5 +1,5 @@
 <template>
-  <div class="p-8 bg-white rounded-lg">
+  <div class="p-4 sm:p-8 md:p-12 lg:p-6 rounded-lg ">
     <DetailSurat/>
   </div>
 </template>
@@ -9,6 +9,6 @@
 </style>
 
 <script lang="ts" setup>
-import DetailSurat from '@/components/DetailSurat.vue';
+import DetailSurat from '@/pages/DetailSurat.vue';
 
 </script>
