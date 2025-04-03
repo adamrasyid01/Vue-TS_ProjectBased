@@ -8,23 +8,7 @@ const suratStore = useSuratStore();
 const currentPage = ref(1);
 const itemsPerPage = 10;
 
-// Hitung total halaman
-const totalPages = computed(() => {
-  return suratResponse.value ? Math.ceil(suratResponse.value.length / itemsPerPage) : 1;
-});
 
-// Data yang akan ditampilkan di halaman saat ini
-const paginatedSurat = computed(() => {
-  if (!suratResponse.value) return [];
-  const start = (currentPage.value - 1) * itemsPerPage;
-  const end = start + itemsPerPage;
-  return suratResponse.value.slice(start, end);
-});
-
-// Ubah halaman saat user memilih di pagination
-const changePage = (page: number) => {
-  currentPage.value = page;
-};
 
 onMounted(() => {
   fetchSurat()
@@ -45,7 +29,7 @@ const fetchSurat = async () => {
 const suratResponse = ref();
 
 const bacaSurat = (id: number) => {
-  router.push({ name: 'surah', params: { id } });
+  router.push({ name: 'detail-surat', params: { id } });
 };
 
 </script>

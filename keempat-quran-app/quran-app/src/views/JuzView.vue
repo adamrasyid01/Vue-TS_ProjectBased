@@ -22,12 +22,11 @@ const fetchJuz = async (id: number) => {
 };
 
 onMounted(() => {
-    if (!route.params.id) {
-        router.replace("/juz/1");
-    } else {
-        fetchJuz(Number(route.params.id));
-    }
+  if (route.params.id) {
+    fetchJuz(Number(route.params.id));
+  }
 });
+
 
 // Cegah pemanggilan API ganda dengan membandingkan ID lama dan baru
 watch(() => route.params.id, (newId, oldId) => {

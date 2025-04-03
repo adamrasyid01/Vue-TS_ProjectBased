@@ -8,9 +8,7 @@ import Navbar from './components/Navbar.vue'
 <template>
   <div class="flex flex-col ">
     <Navbar />
-   
-      <RouterView />
-    
+    <RouterView />
   </div>
 </template>
 

@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import SuratView from '@/views/SuratView.vue'
 import JuzView from '@/views/JuzView.vue'
+import DetailSurat from '@/pages/DetailSurat.vue'
 
 
 const router = createRouter({
@@ -13,12 +14,20 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/surat/:id?',
+      path: '/surat',
       name: 'surat',
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: SuratView
+    },
+    {
+      path: '/surat/:id',
+      name: 'detail-surat',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: DetailSurat
     },
     {
       path : '/juz/:id?',
@@ -28,4 +37,12 @@ const router = createRouter({
   ]
 })
 
+// **Tangani navigasi agar "/juz" selalu mengarah ke "/juz/1"**
+router.beforeEach((to, from, next) => {
+  if (to.path === "/juz") {
+    next("/juz/1");
+  } else {
+    next();
+  }
+});
 export default router

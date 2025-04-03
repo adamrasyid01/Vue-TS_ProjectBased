@@ -4,7 +4,7 @@ import { ref, onMounted } from "vue";
 import { useRoute } from "vue-router";
 
 const route = useRoute();
-const suratId = Number(Array.isArray(route.params.id) ? route.params.id[0] : route.params.id);
+const suratId = Number(route.params.id);
 const suratStore = useSuratStore();
 const detailSurat = ref();
 
@@ -26,7 +26,7 @@ const fetchDetailSurat = async (id: number) => {
 </script>
 
 <template>
-  <div v-if="detailSurat" class=" mt-12">
+  <div v-if="detailSurat" class="p-8 mt-12">
     <h1 class="text-4xl font-bold py-6 text-center text-teal-600">
       {{ detailSurat.nama }} {{ detailSurat.namaLatin }}
     </h1>
@@ -37,13 +37,13 @@ const fetchDetailSurat = async (id: number) => {
       <h2 class="text-2xl font-semibold text-teal-400 mb-2">
         Ayat {{ ayat.nomorAyat }}
       </h2>
-      <p class="text-right text-3xl text-teal-600 leading-loose">
+      <p class="text-right text-3xl leading-relaxed">
         {{ ayat.teksArab }}
       </p>
-      <p class="text-lg text-gray-600 italic text-end">
+      <p class="text-lg text-teal-400 italic text-left">
         {{ ayat.teksLatin }}
       </p>
-      <p class="text-base text-gray-700 text-end">
+      <p class="text-base text-gray-700 text-left">
         {{ ayat.teksIndonesia }}
       </p>
 
