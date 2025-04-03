@@ -19,14 +19,14 @@ const props = defineProps<{
 
 <template>
     <div class="p-2 bg-white rounded shadow-md">
-        <h1 class="text-2xl font-bold text-teal-700 text-center mb-4">Juz {{ juzData?.[0]?.juz }}</h1>
+        <h1 class="text-4xl font-bold text-teal-600 text-center mb-4">Juz {{ juzData?.[0]?.juz }}</h1>
 
         <div v-if="props.juzData && props.juzData.length" class="space-y-6">
             <div v-for="ayat in props.juzData" :key="ayat.id" class="p-4 border-b border-gray-300">
                 <p class="text-right text-2xl font-arabic leading-relaxed text-gray-900">
                     {{ ayat.arab }}
                 </p>
-                <p class="text-gray-700 italic mt-2">{{ ayat.latin }}</p>
+                <p class="text-teal-400 italic mt-2">{{ ayat.latin }}</p>
                 <p class="text-gray-600 mt-2">{{ ayat.text }}</p>
 
                 <audio :src="ayat.audio" controls class="mt-2 w-full"></audio>

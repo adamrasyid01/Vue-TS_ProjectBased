@@ -30,17 +30,17 @@ const fetchDetailSurat = async (id: number) => {
     <h1 class="text-4xl font-bold py-6 text-center text-teal-600">
       {{ detailSurat.nama }} {{ detailSurat.namaLatin }}
     </h1>
-    <hr class="border-teal-300 mb-6" />
+    <hr class="border-gray-300 mb-6" />
 
     <!-- Loop melalui setiap ayat -->
     <div v-for="ayat in detailSurat.ayat" :key="ayat.nomorAyat" class="mb-6 p-4 border rounded shadow ">
-      <h2 class="text-2xl font-semibold text-teal-400 mb-2">
+      <h2 class="text-xl">
         Ayat {{ ayat.nomorAyat }}
       </h2>
-      <p class="text-right text-3xl leading-relaxed">
+      <p class="text-right text-2xl leading-relaxed font-arabic">
         {{ ayat.teksArab }}
       </p>
-      <p class="text-lg text-teal-400 italic text-left">
+      <p class=" text-teal-400 italic text-left">
         {{ ayat.teksLatin }}
       </p>
       <p class="text-base text-gray-700 text-left">
