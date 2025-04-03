@@ -60,20 +60,22 @@ const bacaSurat = (id: number) => {
     <h1 class="mb-8 font-serif text-3xl font-bold text-center text-teal-600">Daftar Surat</h1>
 
     <!-- Susunan Suratnya -->
-    <div class="flex flex-col">
+    <div class="grid md:grid-cols-3 gap-4">
 
-      <button v-for="surat in paginatedSurat" :key="surat.nomor"
-        class="bg-white shadow-lg rounded-md mb-6 text-left p-6 max-w-full transition-transform transform hover:scale-105 hover:shadow-xl"
+      <div v-for="surat in suratResponse" :key="surat.nomor"
+       class="p-3 shadow rounded-lg text-left border cursor-pointer transition-transform duration-300 ease-in-out 
+                        hover:bg-teal-100 hover:transform hover:scale-105"
         @click="bacaSurat(surat.nomor)">
         <!-- Loop through suratList and display each surat -->
-        <h2 class="text-2xl font-semibold text-teal-600">Nomor Surat: {{ surat.nomor }}</h2>
-        <h3 class="text-lg text-teal-500">Nama Latin: {{ surat.namaLatin }}</h3>
-        <p class="text-base text-gray-700">Bahasa Arab: {{ surat.nama }}</p>
+        <h2 class="text-md  text-teal-600">Nomor Surat: {{ surat.nomor }}</h2>
+        <h3 class="text-xl font-bold ">{{ surat.namaLatin }}</h3>
+        <!-- <p class="text-xs text-end text-gray-700">{{ surat.nama }}</p> -->
         <p class="text-sm text-gray-500">Arti: {{ surat.arti }}</p>
-      </button>
+      </div>
 
-      <Pagination :totalPages="totalPages" :currentPage="currentPage" @page-change="changePage" />
+
     </div>
+    <!-- <Pagination :totalPages="totalPages" :currentPage="currentPage" @page-change="changePage" /> -->
 
   </div>
 </template>

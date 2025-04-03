@@ -10,6 +10,6 @@ import Pagination from '@/components/Pagination.vue';
 <template>
   
   <HeaderHome />
-  <CardSurah />
+  <!-- <CardSurah /> -->
   
 </template>

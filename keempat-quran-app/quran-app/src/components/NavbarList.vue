@@ -4,6 +4,7 @@ import { ref } from 'vue';
 const navItems = ref([
   { name: 'Home', href: '/' },
   { name: 'Juz', href: '/juz' },
+  { name: 'Surat', href: '/surat' },
   { name: 'Doa', href: '/tafsir' },
 ]);
 </script>

@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import SurahView from '@/views/SurahView.vue'
+import SuratView from '@/views/SuratView.vue'
 import JuzView from '@/views/JuzView.vue'
 
 
@@ -13,12 +13,12 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/surah/:id?',
-      name: 'surah',
+      path: '/surat/:id?',
+      name: 'surat',
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: SurahView
+      component: SuratView
     },
     {
       path : '/juz/:id?',
